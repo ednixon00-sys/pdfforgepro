@@ -465,6 +465,9 @@ async function handleSubscriptionDeleted(subscription) {
 // -------------------------
 // 10) Start the server
 // -------------------------
+app.get("/", (req, res) => {
+  res.send("PDFForgePro API is running. Try /health or /api/stripe/config");
+});
 app.listen(PORT, "0.0.0.0", () => {
   console.log(` PDF Forge Trial API listening on ${PORT}`);
   console.log(` Environment: ${process.env.NODE_ENV || "development"}`);
